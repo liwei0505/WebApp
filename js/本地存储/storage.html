@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>本地存储</title>
+    <h2>使用LocalStorage存储事件监听实例-操作数据</h2>
+    <script type="text/javascript">
+        window.onload = function () {
+            localStorage.clear()
+            localStorage.setItem("userData","storage demo")
+            localStorage.setItem("userData","storage event demo")
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <script>
+
+        <!--将数据保存在当前会话中,数据生命周期只保存在存储它的当前窗口或由当前窗口新建的新窗口,直到相关联的标签页关闭-->
+        if(window.sessionStorage){
+//            alert('支持sessionstorage')
+//            sessionStorageString()
+//            sessionStorageJson()
+        }
+        <!--数据一直保存在客户端中,关闭重启数据仍存在,直到用户或程序明确指定删除.基于域,域内所有页面都可以访问localstorage数据-->
+        if(window.localStorage){
+            //alert('支持localstorage')
+//            localStorageString()
+//            localStorageJson()
+        }
+        <!--都继承于Storage接口,用法基本相同,区别:数据的保存时长及数据的共享方式-->
+
+        function sessionStorageJson() {
+            var userData = {
+                name:"Sankyu",
+                account:"sankyu",
+                level:1,
+                disabled:true
+            }
+            sessionStorage.setItem("userData", JSON.stringify(userData))
+            console.log(userData)
+        }
+
+        function sessionStorageString() {
+            sessionStorage.setItem("name","Jom")
+            console.log(sessionStorage.length)
+            var a1 = sessionStorage.getItem("name")
+            console.log(sessionStorage)
+            sessionStorage.removeItem("name")
+            console.log(sessionStorage)
+            sessionStorage.clear()
+            console.log(sessionStorage)
+        }
+
+        //键值存储字符串
+        function localStorageString() {
+
+            localStorage.setItem("name","localstorage数据存储")
+            localStorage.setItem("age","20")
+
+            console.log(localStorage.length)
+            var a1 = localStorage.getItem("name")
+            document.write(a1)//页面中打印
+            console.log(a1)
+            //只有一个值,可通过索引index读取  localStorage.key(1)
+            console.log(localStorage)
+            //删除key为name的item
+            localStorage.removeItem("name")
+            console.log(localStorage)
+            localStorage.clear()
+            console.log(localStorage)
+        }
+
+        //键值存储json
+        function  localStorageJson() {
+            var userData = {
+                name:"Sankyu",
+                account:"sankyu",
+                level:1,
+                disabled:true
+            }
+            localStorage.setItem("userData", JSON.stringify(userData))//字符串转json对象
+            var newUserData = JSON.parse(localStorage.getItem("userData"))//json对象转换成原来数据
+            //分别设置新值
+            JSON.parse(localStorage.getItem("userData")).name = "new Sankyu Name"
+            newUserData.name = "new Sankyu Name";
+
+            console.log(newUserData.name)
+            //无法通过点语法直接修改Json中数据,并且将json数据赋给新变量并修改也没有对localStorage中item有任何修改
+            console.log("未更新localStorage:"+JSON.parse(localStorage.getItem("userData")).name)
+
+            //对localStorage重新设置后,值就会改变了
+            localStorage.setItem("userData", JSON.stringify(newUserData))
+            console.log("更新localStorage后:"+JSON.parse(localStorage.getItem("userData")).name)
+
+//            localStorage.removeItem("userData")
+//            console.log(newUserData)
+        }
+
+    </script>
+</header>
+
+</body>
+</html>
