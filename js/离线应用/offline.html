@@ -6,7 +6,13 @@
     <p>manifest使用-只要在html标签中加manifest属性指定文件就可以实现支持html5离线应用</p>
     <script type="text/javascript">
         window.onload = function () {
+            if (window.applicationCache) {
+                console.log("支持离线应用")
+                //添加状态监听
+                applicationCache.addEventListener('updateready', function () {
 
+                })
+            }
         }
     </script>
 </head>
@@ -14,8 +20,12 @@
 <header>
 
     <script type="application/javascript">
-
-
+        //判断当前浏览器状态(在线或离线)
+        if (window.navigator.onLine) {
+            console.log("当前浏览器online")
+        } else {
+            console.log("当前浏览器offline")
+        }
     </script>
 </header>
 

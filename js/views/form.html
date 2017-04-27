@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>移动设备常见h5表单元素</title>
+</head>
+<body>
+
+<h2>实现控件不依赖于form的位置</h2>
+<!--form外的input不从属于form提交时不会提交。但对外部input增加form属性与form的id相同,就可以设置外部input从属于form-->
+<form id="testform">
+    <p>autofocus指定对象自动获得焦点,一个页面只能有一个控件有该属性</p>
+    <p>required元素值为空则无法提交</p>
+    <input type="text" placeholder="form内输入框,非空" autofocus required>
+</form>
+<input form="testform" placeholder="form外输入框,通过form属性设置从属于form"/><br>
+<p>一下为建议使用h5新特性</p>
+<input type="search" placeholder="输入搜索关键字"/><br>
+<input type="email" placeholder="输入email"/><br>
+<input type="number" placeholder="number类型" max=""><br>
+<input type="tel" placeholder="输入电话"><br>
+<input type="url" placeholder="输入url"><br>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS学习</title>
+</head>
+<body>
+
+<!--style全局生效,可以写一个,此处学习期间为了方便观察,后边覆盖前边的样式-->
+
+<div id="article">完全匹配属性选择器</div>
+<!--指定完全匹配的id,完全匹配就是用该样式,否则不使用-->
+<style type="text/css">
+    [id=article]{
+        color: red;
+    }
+</style>
+
+<!--匹配范围更广,只要元素中的属性包含指定字符串,元素就使用该样式-->
+<div id="abc">包含匹配选择器1</div>
+<div id="abcd">包含匹配选择器2</div>
+<div id="bcd">包含匹配选择器3</div>
+<style type="text/css">
+    [id *= ab]{
+        color: blueviolet;
+    }
+</style>
+
+<div id="cara">首字符匹配选择器1</div>
+<div id="carb">首字符匹配选择器2</div>
+<div id="busc">首字符匹配选择器3</div>
+<div id="foota">尾字符匹配选择器1</div>
+<div id="footb">尾字符匹配选择器2</div>
+<div id="footc">尾字符匹配选择器3</div>
+<div id="weilei">伪类选择器:选择某个元素之前插入内容</div>
+<style type="text/css">
+    [id ^= c]{
+        color: aqua;
+    }
+    [id $= a]{
+        color: brown;
+    }
+    [id='weilei']:before {
+        content: 'before(红色为加入的内容)';
+        color: red;
+    }
+    /*给元素添加伪类选择器*/
+    p.before{
+        content: "文字";
+    }
+</style>
+
+</body>
+</html>
