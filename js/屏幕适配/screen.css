@@ -1,0 +1,5 @@
+@media screen and(max-width: 600px) and(max-height: 900px){
+    .demo{
+        background-color: #CCC;
+    }
+}
