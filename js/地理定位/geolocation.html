@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Geolocation API 地理定位</title>
+    <script type="text/javascript">
+        navigator.geolocation.getCurrentPosition(function(pos){
+            console.log("当前纬度："+pos.coords.latitude)
+            console.log("当前经度:"+pos.coords.longitude)
+            console.log("当前经纬度的精度:"+pos.coords.accuracy)
+        });
+
+        var watchID = navigator.geolocation.watchPosition(function(pos){
+            console.log("当前位置变化纬度："+ pos.coords.latitude)
+            console.log("当前位置变化经度:"+ pos.coords.longitude)
+            console.log("当前位置变化经纬度的经度"+pos.coords.accuracy)
+            navigator.geolocation.clearWatch(watchID)
+        },function(){
+
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>
