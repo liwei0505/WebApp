@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>jQueryMobile hello world demo</title>
+    <link rel="stylesheet" href="jquery.mobile-1.4.5.css">
+    <script type="text/javascript" src="jquery.mobile-1.4.5.js"></script>
+</head>
+<body>
+这是一个简单的hello 示例
+
+<!--自定义属性 dataset: 前缀必须有data-后边允许任何值， 允许将这类属性添加到html标签元素中 -->
+<!--自定义属性只是充当元素私有数据存储区域， 使用前检测浏览器是否支持dataset属性-->
+<div id="title" class="title" data-category="前端技术" data-title="html5移动开发"
+     data-time="2011-11-01" data-author="sankyu"></div>
+<script>
+    var title = document.getElementById("title")
+    if(title.dataset){
+        console.log("支持dataset属性")
+    } else {
+        console.log("不支持dataset属性")
+    }
+</script>
+
+</body>
+</html>
