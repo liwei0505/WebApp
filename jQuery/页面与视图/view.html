@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--h5标准文档类型-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>jQuery Mobile标准页面</title>
+    <link rel="stylesheet" href="../jQuery/jquery.mobile-1.3.2.min.css">
+    <link rel="stylesheet" href="view.css">
+    <script type="text/javascript" src="../jQuery/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../jQuery/jquery.mobile-1.3.2.min.js"></script>
+</head>
+<body>
+    <!--<div data-role="page">-->
+        <!--<div data-role="header">页头</div>-->
+        <!--<div data-role="content">内容</div>-->
+        <!--<div data-role="footer">页脚</div>-->
+    <!--</div>-->
+
+<!--h5新元素替换div元素-->
+    <!--section:页面的一段或一节，分成不同模块或栏目。 可看成一个视图页面，header、footer页头页脚，article每个视图主题内容-->
+    <!--<section data-role="page">-->
+        <!--<header data-role="header">页头</header>-->
+        <!--<article data-role="content">内容</article>-->
+        <!--<footer data-role="footer">页脚</footer>-->
+    <!--</section>-->
+
+<!--多视图-->
+    <!--data-transition设置页面切换效果，data-gransition指定其他动画效果-->
+    <!--任何视图页面，只要在data-rel中定义dialog值，就具有浮动层效果;  data-rel="dialog"-->
+    <!--data-theme可以对视图、header、footer设置不同主题-->
+    <!--超链接设置data-role="button"转换成button-->
+    <section data-role="page" id="firstView" data-title="第一个视图title" data-theme="a">
+        <header data-role="header" data-theme="b">第一个视图</header>
+        <article data-role="content">
+            <a href="#secondView" data-transition="slide">切换第二个视图</a>
+            <a href="#buttonView" data-role="button">a button</a>
+        </article>
+        <footer data-role="footer" data-theme="c">页脚</footer>
+    </section>
+    <section data-role="page" id="secondView" data-title="第二个视图title">
+        <header data-role="header">第二个视图</header>
+        <article data-role="content">
+            <a href="#firstView" data-transition="pop">切换第一个视图</a>
+        </article>
+        <footer data-role="footer">页脚</footer>
+    </section>
+    <!--data-iconpos="notext"只有图标的按钮-->
+    <!--data-inline="true"按钮大小自适应文字，不是默认的占满屏幕-->
+    <section data-role="page" id="buttonView" data-title="按钮" data-add-back-btn="返回">
+        <p>除了超链接能自动转换成button，表单中如下类型也会自动转换成jquery提供的按钮风格</p>
+        <a href="#firstView" data-role="button" data-icon="star" >超链接按钮</a>
+
+        <a href="#" data-role="button" data-icon="back" data-inline="true" data-theme="b">delete</a>
+        <a href="#" data-role="button" data-icon="myapp-email" data-inline="true" data-theme="c">自定义图标</a>
+
+        <input type="button" name="button类型input" value="button类型input">
+        <input type="submit" name="submit类型input" value="submit类型input">
+        <input type="reset" name="reset类型input" value="reset类型input">
+        <input type="image" name="image类型input">
+
+        <p>分组功能的button</p>
+        <div data-role="controlgroup">
+            <a href="#" data-role="button" data-theme="a">返回</a>
+            <a href="#" data-role="button" data-theme="b">首页</a>
+            <a href="#" data-role="button" data-theme="c">前进</a>
+        </div>
+        <div data-role="controlgroup" data-type="horizontal">
+            <a href="#" data-role="button" data-icon="back" data-theme="a">返回</a>
+            <a href="#" data-role="button" data-icon="home" data-theme="b">首页</a>
+            <a href="#" data-role="button" data-icon="forward" data-theme="c">前进</a>
+        </div>
+    </section>
+</body>
+</html>
