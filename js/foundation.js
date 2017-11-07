@@ -44,13 +44,30 @@ while (i<10) {
 }
 
 //！--对象--
+// 对象中属性可以是任意类型
 var beyond = {};
 beyond.formedIn = '1983';
 beyond['foundedIn'] = '香港';
 console.log(beyond);
 
-var beyond2 = {formedIn: '1983', foundedIn: '英国'};
+var beyond2 = {formedIn: '1983', foundedIn: '英国', artist:['黄家驹', '黄家强']};
 //访问
-console.log(beyond2.formedIn+beyond2['foundedIn']);
+console.log(beyond2.formedIn+beyond2['foundedIn']+beyond2.artist[1]);
 
-//17wan
+//给对象添加方法
+beyond2.showArtist = function() {
+    for(var i=0; i<beyond2.artist.length; i++) {
+        document.writeln(this.artist[i]);
+    }
+};
+//调用对象方法
+beyond2.showArtist();
+//console.log(beyond2);
+
+//遍历对象属性
+var property;
+for(property in beyond2) {
+    if(typeof(beyond2[property]) != "function"){
+        console.log('beyond2.property:'+beyond2[property]);
+    }
+}
