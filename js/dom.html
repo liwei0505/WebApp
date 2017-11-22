@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父子元素、兄弟元素相对关系定位</title>
+</head>
+<body>
+<div>
+    第0个
+</div>
+<div>第1个
+    <p></p>
+    <span></span>
+    <ul id="season">
+        <li>春</li>
+        <li>夏</li>
+        <li>秋</li>
+        <li>冬</li>
+    </ul>
+    <div></div>
+</div>
+<div id="banner">
+    第2个
+    <p>p1</p>
+    <p>p2</p>
+    <span></span>
+    <div>div子</div>
+</div>
+<div>
+    第3个
+</div>
+<script>
+    function t1() {
+        var a = document.getElementById('season');
+        a.parentNode.style.background = 'blue';
+//        document.write(a.parentNode);
+    }
+
+    function t2() {
+        var a = document.getElementById('season');
+//        a.firstChild.style.background = 'red';//这里第一个子元素取得是空格，并不是li标签
+        a.firstElementChild.style.background = 'red';
+        a.firstElementChild.nextElementSibling.style.background = 'yellow';
+//        a.children[0]
+//        document.write(a.firstElementChild);//元素
+//        document.write(a.firstChild);//文本
+    }
+
+    function t3() {
+        var ban = document.getElementById('banner');
+        var ps = ban.getElementsByTagName('p');
+        alert(ps.firstElementChild);
+        ps[0].style.background = 'blue';
+
+    }
+</script>
+<p>
+    <input type="button" value="父元素" onclick="t1();"/>
+</p>
+<p>
+    <input type="button" value="第一个子元素" onclick="t2();"/>
+</p>
+<p>
+    <input type="button" value="byName" onclick="t3();"/>
+</p>
+
+</body>
+</html>

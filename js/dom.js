@@ -4,6 +4,16 @@
 
 // 文档对象模型DOM(document object model)
 
+//查找节点
+document.getElementById() //根据id查找
+document.getElementsByTagName()//通过标签查找
+document.getElementsByName()//通过name属性
+/*
+* 早期 getElementsByName只用在表单中，后来扩展到其他元素div
+* 但ie没有变，处于兼容，只能对表单用byname
+* */
+
+
 //文档资源处理完触发window load事件，保证代码正常执行在load后添加
 window.onload = function () {
     var btn = document.querySelector('.btn');

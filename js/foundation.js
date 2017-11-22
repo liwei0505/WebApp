@@ -71,3 +71,42 @@ for(property in beyond2) {
         console.log('beyond2.property:'+beyond2[property]);
     }
 }
+
+//字符串转平台通用unicode编码
+function trans() {
+    var enc = "人民币";
+    //转码
+    var unenc = escape(enc);
+    //解码
+    unescape(unenc);
+
+}
+
+//类型转换
+function typeTrans() {
+    var age = '12.987';
+    var str = '人民币';
+    age = parseInt(age); //字符串前缀不分的数字分析成整形，小数点直接舍弃，不四舍五入，前缀不是数字为NaN
+    parseFloat(age); //前缀分析成浮点数
+
+    //isNaN 判断某个变量为非数字：正无穷大、负无穷大、NaN
+    if (isNaN(str)){
+
+    }
+    isFinite(age) //判断是否有限（无限大）
+
+}
+/*
+eval() //运行一段js代码，接收一段js代码时使用
+*/
+
+/*****对象********/
+var stu1 = {name: 'xiaoming', age:22, number:'002'};
+console.log(stu1['name']+stu1.name);
+//遍历属性
+for(per in stu1){
+    console.log(stu1[per]); //不能用点，只能用【】取
+}
+
+delete stu1.number; //删除属性
+
