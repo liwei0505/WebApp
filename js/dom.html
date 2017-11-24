@@ -5,11 +5,12 @@
     <title>父子元素、兄弟元素相对关系定位</title>
 </head>
 <body>
-<div>
-    第0个
-</div>
-<div>第1个
+<div>增加p节点
     <p></p>
+    <div id="container"></div>
+    <input type="button" value="增加p节点" onclick="addNode()"/>
+</div>
+<div class="season" id="cart">第1个
     <span></span>
     <ul id="season">
         <li>春</li>
@@ -17,7 +18,9 @@
         <li>秋</li>
         <li>冬</li>
     </ul>
-    <div></div>
+    <input type="button" value="创建插入li节点" onclick="insertNode()"/>
+    <input type="button" value="复制节点" onclick="cloneN()" />
+
 </div>
 <div id="banner">
     第2个
@@ -29,11 +32,34 @@
 <div>
     第3个
 </div>
+<input type="button" value="父元素" onclick="t1();"/>
+<input type="button" value="第一个子元素" onclick="t2();"/>
+<input type="button" value="byName" onclick="t3();"/>
+</body>
+</html>
+
 <script>
+    function cloneN() {
+        var olde = document.getElementById('season');
+        var newe = olde.cloneNode(true);
+        var insertN = document.getElementsByClassName('season');
+        insertN[0].appendChild(newe);
+    }
+
+    function insertNode() {
+        var li = document.createElement('li');
+        var litext = document.createTextNode('中');
+        li.appendChild(litext);
+
+        var uls = document.getElementById('season');
+        var xia = uls.getElementsByTagName('li')[2];
+        uls.insertBefore(li,xia);
+
+    }
+
     function t1() {
         var a = document.getElementById('season');
         a.parentNode.style.background = 'blue';
-//        document.write(a.parentNode);
     }
 
     function t2() {
@@ -53,16 +79,28 @@
         ps[0].style.background = 'blue';
 
     }
-</script>
-<p>
-    <input type="button" value="父元素" onclick="t1();"/>
-</p>
-<p>
-    <input type="button" value="第一个子元素" onclick="t2();"/>
-</p>
-<p>
-    <input type="button" value="byName" onclick="t3();"/>
-</p>
+    
+    function addNode() {
+        var node = document.createElement('p');
+        var nodetext = document.createTextNode(Math.random());
+        node.appendChild(nodetext);
 
-</body>
-</html>
+        var container = document.getElementById('container');
+        container.appendChild(node);
+    }
+
+</script>
+
+<style>
+    p {
+        width: 50px;
+        height: 50px;
+        background: blue;
+    }
+
+    #container p {
+        width: 10px;
+        height: 10px;
+        background: green;
+    }
+</style>
