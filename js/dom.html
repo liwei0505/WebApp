@@ -18,8 +18,10 @@
         <li>秋</li>
         <li>冬</li>
     </ul>
-    <input type="button" value="创建插入li节点" onclick="insertNode()"/>
+    <input type="button" value="创建插入li节点'中'" onclick="insertNode()"/>
     <input type="button" value="复制节点" onclick="cloneN()" />
+    <input type="button" value="删除节点”中“" onclick="deleteZhong()"/>
+    <input type="button" value="替换春为上" onclick="replace()"/>
 
 </div>
 <div id="banner">
@@ -39,6 +41,23 @@
 </html>
 
 <script>
+
+    function replace() {
+        var neli = document.createElement('li');
+        var neNode = document.createTextNode('上');
+        neli.appendChild(neNode);
+
+        var faNode = document.getElementById('season');
+        var repNode = faNode.children[0];
+        faNode.replaceChild(neli, repNode);
+    }
+
+    function deleteZhong(){
+        var ulN = document.getElementsByTagName('ul')[0];
+        var child = ulN.children[2];
+        ulN.removeChild(child);
+    }
+
     function cloneN() {
         var olde = document.getElementById('season');
         var newe = olde.cloneNode(true);
