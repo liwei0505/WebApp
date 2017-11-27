@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>innerHTML</title>
+</head>
+<body>
+
+<div class="season" id="cart">第1个
+    <span>四季</span>
+    <ul id="season">
+        <li>春</li>
+        <li>夏</li>
+        <li>秋</li>
+        <li>冬</li>
+    </ul>
+    <input type="button" value="查看" onclick="innerHTML_demo()"/>
+    <input type="button" value="替换" onclick="replace_demo()"/>
+    <input type="button" value="图片" onclick="addImage()"/>
+
+</div>
+
+</body>
+</html>
+
+<script>
+    
+    function innerHTML_demo() {
+        var node = document.getElementById('season');
+        alert(node.innerHTML);
+        alert(node.innerText);
+    }
+    
+    function replace_demo() {
+        var node = document.getElementById('season');
+        var htmlCode = "<ul><li>东</li><li>南</li><li>西</li><li>北</li></ul>";
+        node.innerHTML = htmlCode;
+    }
+
+    function addImage() {
+        var node = document.getElementsByClassName('season')[0];
+        var ulNode = node.getElementsByTagName('ul')[0];
+        ulNode.innerHTML = "<img src='../img/bd_logo1.png'>";
+    }
+
+
+</script>
+
+<style>
+    p {
+        width: 50px;
+        height: 50px;
+        background: blue;
+    }
+
+    #container p {
+        width: 10px;
+        height: 10px;
+        background: green;
+    }
+</style>
