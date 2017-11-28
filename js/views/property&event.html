@@ -49,6 +49,11 @@
                 return false; //加return false，阻止提交事件
             }
         }
+        //另一种方法实现事件绑定
+        //分离式脚本编程，实现结构、行为、样式的分离即：css script与标签样式分开实现
+        //t1不带()即 返回值赋给onclick事件为undefined
+        document.getElementsByName('button_email')[0].onclick = t1();
+
     </script>
     <style>
         #baidu {
@@ -70,7 +75,7 @@
         <input type="text" name="email" value="" onblur="unforcus()"/>
     </p>
     <p>
-        <input type="button" name="button_email" value="邮件地址" onclick="t1()"/>
+        <input type="button" name="button_email" value="邮件地址" />
     </p>
     <p>
         <input type="button" value="检查邮件地址" onclick="t2()"/>
