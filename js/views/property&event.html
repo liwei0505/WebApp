@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>修改节点属性</title>
+
+    <script>
+        function t1() {
+            document.getElementsByName('email')[0].value = '填写email';
+        }
+
+        function unforcus() {
+            if (document.getElementsByName('email')[0].value == '') {
+                alert('填上email');
+            }
+        }
+
+        function t2() {
+            var email = document.getElementsByName('email')[0];
+            if (email.value == '') {
+                email.value = "请输入邮箱";
+            }
+        }
+        function t3() {
+            var email = document.getElementsByName('email')[0];
+            email.type = 'radio';
+        }
+
+        function t4() {
+            var baidu = document.getElementById('baidu');
+            baidu.style.display = 'block';
+        }
+        
+        function t5() {
+            var bd = document.getElementById('baidu');
+            bd.style.display = 'none';
+        }
+        function t6() {
+            var sel = document.getElementsByName('xueli')[0];
+            if (sel.value == '' || sel.value == '请选择') {
+                alert('请选择');
+            }
+        }
+        function t7() {
+            var email = document.getElementsByName('email')[0];
+            if (email.value == '') {
+                alert('填写email');
+                return false; //加return false，阻止提交事件
+            }
+        }
+    </script>
+    <style>
+        #baidu {
+            display:none;
+        }
+    </style>
+</head>
+<body onload="" onunload="">
+
+<div>
+    <a href="#" onmouseover="t4()" onmouseout="t5()">百度</a>
+    <p id="baidu">百度一下
+        <img src='../img/bd_logo1.png'>
+    </p>
+</div>
+
+<form onsubmit="return t7()"> //注意必须加return，否则阻止不了提交事件url还是有参数
+    <p>
+        <input type="text" name="email" value="" onblur="unforcus()"/>
+    </p>
+    <p>
+        <input type="button" name="button_email" value="邮件地址" onclick="t1()"/>
+    </p>
+    <p>
+        <input type="button" value="检查邮件地址" onclick="t2()"/>
+    </p>
+    <p>
+        <input type="button" value="变成radio" onclick="t3()"/>
+    </p>
+    <p>
+        <select name="xueli" onchange="t6()">
+            <option value="">请选择</option>
+            <option value="大学">大学</option>
+            <option value="中学">中学</option>
+            <option value="小学">小学</option>
+        </select>
+    </p>
+    <p>
+        <input type="submit" value="提交"/> //注意url参数变化
+    </p>
+
+</form>
+
+
+</body>
+</html>
