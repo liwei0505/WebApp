@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格</title>
+    <script>
+        function chLineColor() {
+            var tab = document.getElementsByTagName('tr');
+            for(var i=0,len=tab.length; i<len; i++) {
+                if(i%2==0){
+                    tab[i].style.background = 'blue';
+                } else {
+                    tab[i].style.background = 'green';
+                }
+            }
+        }
+    </script>
+
+    <style>
+
+    </style>
+</head>
+<body onload="chLineColor()">
+<table boder="1">
+    <tr><td>学号</td><td>姓名</td><td>年龄</td></tr>
+    <tr><td>学号</td><td>姓名</td><td>年龄</td></tr>
+    <tr><td>学号</td><td>姓名</td><td>年龄</td></tr>
+    <tr><td>学号</td><td>姓名</td><td>年龄</td></tr>
+</table>
+</body>
+</html>

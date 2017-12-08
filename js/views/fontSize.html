@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字体大中小号</title>
+
+    <script>
+        function change(num) {
+            var element = document.getElementsByTagName('div')[0];
+            element.style.fontSize = num + 'px';
+        }
+    </script>
+
+    <style>
+        div {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    iOS是由苹果公司开发的移动操作系统[1] 。苹果公司最早于2007年1月9日的Macworld大会上公布这个系统，最初是设计给iPhone使用的，后来陆续套用到iPod touch、iPad以及Apple
+    TV等产品上。iOS与苹果的Mac OS X操作系统一样，属于类Unix的商业操作系统。原本这个系统名为iPhone OS，因为iPad，iPhone，iPod touch都使用iPhone
+    OS，所以2010WWDC大会上宣布改名为iOS（iOS为美国Cisco公司网络设备操作系统注册商标，苹果改名已获得Cisco公司授权）。
+    2016年1月，随着9.2.1版本的发布，苹果修复了一个存在了3年的漏洞。该漏洞在iPhone或iPad用户在酒店或者机场等访问带强制门户的网络时，登录页面会通过未加密的HTTP连接显示网络使用条款。在用户接受条款后，即可正常上网，但嵌入浏览器会将未加密的Cookie分享给Safari浏览器。利用这种分享的资源，黑客可以创建自主的虚假强制门户，并将其关联至WiFi网络，从而窃取设备上保存的任何未加密Cookie
+</div>
+<input type="button" value="大" onclick="change(16)"/> &nbsp;&nbsp;
+<input type="button" value="中" onclick="change(14)"/> &nbsp;&nbsp;
+<input type="button" value="小" onclick="change(12)"/>
+</body>
+</html>
