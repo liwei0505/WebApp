@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>五子棋</title>
+    <script>
+
+        var current = 'black';//全局控制变量
+
+        function itemClick() {
+            if (this.flag) {
+                return;
+            }
+            this.style.background = 'url(../img/'+current+'.gif)';
+            this.flag = (current == 'black') ? 'b' : 'w';
+            current = (current == 'black') ? 'white' : 'black';
+        }
+
+        function init() {
+            var etd = document.getElementsByTagName('td');
+            for (var i= 0, count = etd.length; i<count; i++) {
+                etd[i].onclick= itemClick;
+                etd[i].flag = 0;
+            }
+        }
+
+    </script>
+    <style>
+        #container {
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+            border: solid 1px blue;
+            background: url("../img/backgroup.gif") no-repeat;
+            padding-left: 5px;
+            padding-top: 7px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 525px;
+            height: 525px;
+        }
+        td {
+            border: solid 1px red;
+            width: 34px;
+            height: 27px;
+        }
+    </style>
+</head>
+<body onload="init()">
+<div id="container">
+    <table>
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
