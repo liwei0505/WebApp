@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+    <style type="text/css">
+        .un{
+            /*border-style: none;*/
+            outline-style: none;
+            background-color: mediumpurple;
+            border:1px dashed green;
+        }
+        .un:focus{
+            background: red;
+        }
+        .mail{
+            border-style: none;
+            outline-style: none;
+            border-bottom: 1px dotted red;
+        }
+        .search{
+            border-style: none;
+            outline-style: none;
+            border:1px solid #999;
+            background-image: url("../img/search.jpg");
+            background-repeat: no-repeat;
+            background-position: right center;
+        }
+        .outbox{
+            width: 300px;
+            height: 150px;
+            background-color: red;
+            padding: 75px 100px;
+        }
+        .inbox{
+            width: 300px;
+            height: 150px;
+            background-color: green
+        }
+    </style>
+</head>
+<body>
+
+<!--lable for id点击label时input框响应 获取光标焦点-->
+<label for="un">用户名：</label><input class="un" id="un"><br><br>
+邮箱：<input class="mail"><br><br>
+搜索一下：<input type="text" class="search"><br><br>
+
+<div class="outbox">
+    <div class="inbox"></div>
+</div>
+</body>
+</html>
