@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .tex{
+            /*font-size: 16px;*/
+            /*font-weight: 700;*/
+            /*font-family: 微软雅黑;*/
+            /*font-style: italic;*/
+            /*line-height: 40px;*/
+            /*文字属性连写 文字大小和字体必须写*/
+            font: 700 italic 16px/40px 微软雅黑;
+            /*首行缩进*/
+            text-indent: 2em;
+        }
+        .box {
+            font-size: 20px;
+        }
+        div.box>p{
+            color:red;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="tex">文本属性</div>
+    <div class="tex">文本属性</div>
+    <div class="box">
+        <p>登录</p>
+    </div>
+    <div class="box">
+        <span><p>登录</p></span>
+    </div>
+</body>
+</html>

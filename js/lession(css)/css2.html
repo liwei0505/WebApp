@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        /*符合选择器 ：两个或以上的基础选择器通过不同方式连接在一起，交集选择器、后代选择器、子代选择器、并集选择器*/
+
+        /*交集选择器 : 标签+类(ID)）*/
+        .box{
+            font-size: 20px;
+        }
+        div.box{/*交集选择器类*/
+            color: red;
+        }
+        #tex{
+            color: blue;
+        }
+        div#tex{/*交集选择器ID*/
+            width: 200px;
+            height: 30px;
+            background-color: white;
+        }
+
+        /*后代选择器： 选择器+空格+选择器。。。*/
+        /*div p span{*/
+            /*font-size: 50px;*/
+            /*color: yellow;*/
+        /*}*/
+
+        /*子代选择器*/
+        div>span{
+            color: rebeccapurple;
+        }
+        p>span{
+            color: green;
+        }
+
+        /*并集选择器*/
+        div,p,span,h1{
+            color: #990000;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">登录</div>
+    <p class="box">注册</p>
+    <div id="tex">忘记密码</div>
+    <div>
+        <p><span>后代选择器中去掉p效果依然生效</span></p>
+    </div>
+    <!--无限制隔代-->
+    <div><span>忘记密码</span></div>
+    <div>
+        <p><span>注册登录</span></p>
+        <span>就登录</span>
+    </div>
+</body>
+</html>

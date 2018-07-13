@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+    <form action="1.php" method="post">
+        <!--fieldset 分组信息-->
+        <fieldset>
+            <legend>分组信息</legend>
+
+        <input type="text" readonly="readonly" value="只读框">
+        <input type="text" disabled="disabled" value="未激活"><br>
+        用户名：<input type="text" name="username"><br>
+        密&nbsp码(最长6位)：<input type="password" name="password" maxlength="6"><br>
+        <input type="radio" name="gender" checked="checked">男
+        <input type="radio" name="gender">女
+        <br>省(市):
+        <select>
+            <option>河北</option>
+            <option>吉林</option>
+            <option selected="selected">北京</option>
+        </select>
+
+        <select multiple="multiple">
+            <option>多选1</option>
+            <option>多选2</option>
+            <option>多选3</option>
+        </select>
+        市(区):
+        <!--分组选择-->
+        <select>
+            <optgroup label="北京市">
+                <option>昌平区</option>
+                <option>海淀区</option>
+                <option>通州区</option>
+            </optgroup>
+            <optgroup label="吉林市">
+                <option>白城市</option>
+                <option>松原市</option>
+            </optgroup>
+        </select>
+        <br>
+        <br>
+        <!--多选框-->
+        <input type="checkbox">喝酒
+        <input type="checkbox">抽烟
+        <input type="checkbox" checked="checked">烫头
+        <br>
+
+        <!--多行文本框-->
+        <textarea cols="20" rows="3"></textarea>
+        <br>
+
+        </fieldset>
+
+        <!--上传文件-->
+        <input type="file">
+        <br><br>
+        <input type="submit" title="提交">
+        <!--重置按钮 将信息重置到默认状态-->
+        <input type="reset">
+        <br>
+        <!--普通按钮 不能提交信息-->
+        <input type="button" value="普通按钮">
+        <br>
+        <!--图片按钮 有提交功能-->
+        <input type="image" src="form.png">
+    </form>
+
+</body>
+</html>

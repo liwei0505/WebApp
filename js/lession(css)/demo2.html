@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航</title>
+    <style type="text/css">
+        .nav{
+            height: 60px;
+            background-color: #aaa;
+            text-align: center;
+        }
+        div>a{
+            display:inline-block;
+            text-decoration: none;
+            width: 80px;
+            height:60px;
+            color: #000;
+        }
+        a:hover{
+            background-color: #eee;
+            text-decoration: underline;
+        }
+        a.public{
+            font-weight: 700;
+            color: orange;
+        }
+        .content{
+            height:200px;
+            background-color: pink;
+            /*background-image: url("../img/white.gif");*/
+            /*background-repeat: no-repeat;!*repeat-x*!*/
+            /*background-position: 20px 30px;!*right bottom*!*/
+            /*!*背景滚动*!*/
+            /*background-attachment: fixed;!*scroll*!*/
+
+            /*背景属性连写*/
+            /*background: #000099 url("../img/white.gif") no-repeat bottom;*/
+        }
+        .search{
+            height: 30px;
+            width: 200px;
+            background-image: url("../img/search.jpg");
+            background-repeat: no-repeat;
+            background-position: right;
+            padding-right: 40px;
+        }
+        li{
+            /*清除列表项符号*/
+            list-style: none;
+            background: url("../img/li.gif") no-repeat left center;
+            text-indent: 2em;
+        }
+        .buy{
+            display: block;
+            background: url("../img/110.png") top;
+            width: 67px;
+            height: 32px;
+        }
+        a.buy:hover{
+            background: url("../img/110.png") bottom;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="#" class="public">天猫</a>
+        <a href="#" class="public">聚划算</a>
+        <a href="#" class="public">超市</a>
+        <a href="#" class="public">头条</a>
+        <a href="#">阿里旅行</a>
+        <a href="#">电器城</a>
+        <a href="#">淘抢购</a>
+        <a href="#">苏宁生活</a>
+        <a href="#">智能生活</a>
+    </div>
+    <div class="content">
+        <input type="color" class="search" value="请输入关键字">
+        <ul>
+            <li><a href="#" target="_blank">大明星：晚安湾岸,target打开新标签</a></li>
+            <li><a href="#">大明星：晚安湾岸</a></li>
+            <li><a href="#">大明星：晚安湾岸</a></li>
+            <li><a href="#">大明星：晚安湾岸</a></li>
+            <li><a href="#">大明星：晚安湾岸</a></li>
+        </ul>
+    </div>
+    <a href="#" class="buy"></a>
+</body>
+</html>

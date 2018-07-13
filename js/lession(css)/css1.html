@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        /*标签选择器*/
+        div{
+            font-size: 5px;
+            color:green;
+            background: yellow;
+            width: 300px;
+            height: 20px;
+        }
+        p{
+            font-size: 20px;
+            color: red;
+        }
+        /*类选择器*/
+        .box{
+            font-size: 40px;
+            color: #ff0000;
+            background-color: #999;
+            width: 400px;
+            height: 100px;
+        }
+        .tex{
+            text-indent: 2em;
+            /*text-align: right;*/
+        }
+        /*ID选择器*/
+        #box_i{
+            font-size: 5px;
+            color: rgb(0,0,255);
+        }
+        #tex_i{
+            
+        }
+        /*google demo*/
+        .G{
+            font-size: 200px;
+            color: #000099;
+        }
+        .o1{
+            font-size: 200px;
+            color: #990000;
+        }
+
+        /*!*通配符选择器 -- 给所有标签都适用相同的样式 增加浏览器负担（不使用）*!*/
+        /**{*/
+            /*color: red;*/
+        /*}*/
+    </style>
+</head>
+<body>
+    <div>登录</div>
+    <p>重置密码</p>
+    <div>下雨了</div>
+    <div class="box">类选择器box类
+        <div class="tex">家电全品类</div>
+    </div>
+    <span class="tex box">全球年中购物节</span>
+    <div class="tex">全球年中购物节</div>
+    <div id="box_i">一个id选择器在一个页面只能调用一次,2次以上不符合w3c规范，js调用会出问题</div>
+    <!--<div id="tex_i">一个标签只能调用一个id选择器</div>-->
+    <span class="G">G</span>
+    <span class="o1">o</span>
+
+</body>
+</html>
