@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动布局、清除浮动(再学一下)</title>
+    <style type="text/css">
+        .header, .main, .footer{
+            width: 500px;
+        }
+        .header,.footer{
+            height: 100px;
+            background: #000;
+        }
+        .main{
+            height: 300px;
+            margin: 10px 0;
+            background: #aaa;
+        }
+        .left,.right{
+            width: 90px;
+            height: 300px;
+            background:blue;
+        }
+        .left{
+            float: left;
+        }
+        .right{
+            float: right;
+        }
+        .content{
+            width: 300px;
+            height: 300px;
+            margin: 0 10px;
+            /*float: left;*/
+        }
+        .top,.bot{
+            width:300px;
+            height: 150px;
+        }
+        .top{
+            float: top;
+            background: #c9e143;
+        }
+        .bot{
+            float: bottom;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="main">
+        <div class="left"></div>
+        <div class="content">
+            <div class="top"></div>
+            <div class="bot"></div>
+        </div>
+        <div class="right"></div>
+    </div>
+
+    <div class="footer"></div>
+</body>
+</html>

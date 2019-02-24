@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动导航</title>
+    <style type="text/css">
+        body,ul,li{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        .box{
+            height: 55px;
+            background: #999;
+            margin-top: 30px;
+            border-top: solid 1px #666;
+        }
+        .nav{
+            width: 1000px;
+            margin: auto;
+            background: pink;
+            height: 55px;
+            position: relative;
+        }
+        .list li{
+            display: inline-block;
+            float: left;
+            height: 55px;
+            padding: 0 30px;
+        }
+        .list li a{
+            display: inline-block;
+            height: 55px;
+            font: 18px/55px 微软雅黑;
+            text-decoration: none;
+        }
+        .list li a:hover{
+            background: #aaa;
+        }
+        .news{
+            position: absolute;
+            left: 30px;
+            top: -5px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="nav">
+        <ul class="list">
+            <li><a href="#">百度一下</a></li>
+            <li><a href="#">百度一下</a></li>
+            <li><a href="#">百度一下</a></li>
+            <li><a href="#">智能手机</a></li>
+        </ul>
+        <div class="news"><img src="../img/new.png"></div>
+    </div>
+</div>
+</body>
+</html>
